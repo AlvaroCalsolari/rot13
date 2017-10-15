@@ -42,6 +42,7 @@ body {
 	justify-self: center;
 	align-self: end;
 	margin-bottom: 1rem;
+	padding: 1rem;
 }
 
 #decrypted {
