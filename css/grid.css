@@ -23,7 +23,7 @@ body {
 	grid-area: section;
 	display: grid;
 	grid-template-columns: 36% 18% 36%;
-	grid-template-rows: 20% 80%;
+	grid-template-rows: 10% 90%;
 	grid-column-gap: 5%;
 	grid-template-areas: "text-decrypted . text-encrypted" "decrypted rot-value encrypted";
 	/* justify-content: space-between; */
