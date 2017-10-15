@@ -1,6 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Cousine:400,700');
+body {
+	font-family: 'Cousine', monospace;
+}
+
 h1 {
 	text-align: center;
-	font-weight: bold;
+	font-weight: 700;
 	font-size: 2rem;
 }
 
