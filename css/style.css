@@ -22,7 +22,7 @@ ul li {
 	font-size: 0.9rem;
 }
 
-ul li a {
+ul li a , ul li i {
 	text-decoration: none;
 	color: #2A5DB0;
 }
