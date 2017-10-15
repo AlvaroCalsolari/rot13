@@ -15,7 +15,7 @@ function rot(string, rotValue) {
 }
 
 $(document).ready(function () {
-	var reset = function(){
+	var reset = function () {
 		$('#decrypted').val('');
 		$('#encrypted').val('');
 	};
