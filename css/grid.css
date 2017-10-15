@@ -42,7 +42,6 @@ body {
 	justify-self: center;
 	align-self: end;
 	margin-bottom: 1rem;
-	padding: 1rem;
 }
 
 #decrypted {
@@ -56,6 +55,7 @@ body {
 #encrypted,
 #decrypted {
 	margin-bottom: 1rem;
+	padding: 1rem;
 }
 
 #rot-value {
