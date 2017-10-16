@@ -18,7 +18,9 @@ p {
 	font-size: 0.8rem;
 	text-align: center;
 }
-
+#encrypted{
+	text-align: justify;
+}
 ul li {
 	font-size: 0.9rem;
 }

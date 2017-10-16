@@ -1,29 +1,21 @@
-function rot13Cipher(string) {
-	string = string.split('');
+function rot13(c) {
+	let offset = 0;
 
-	string = string.map(function (element) {
-		return rot13(element);
-	});
-	string = string.join('');
-	return string;
-}
+	let charCodeNumber = c.charCodeAt();
 
-function rot13(char) {
-	let isLowerCase = char.charCodeAt() >= 97 && char.charCodeAt() <= 122;
-	let isUpperCase = char.charCodeAt() >= 65 && char.charCodeAt() <= 90;
-	
-	if (isUpperCase) {
-		return String.fromCharCode((((char.charCodeAt() % 65) + 13) % 26) + 65);
-	} else if (isLowerCase) {
-		return String.fromCharCode((((char.charCodeAt() % 97) + 13) % 26) + 97);
+	if (charCodeNumber >= 97 && charCodeNumber <= 122) offset = 97;
+	if (charCodeNumber >= 65 && charCodeNumber <= 90) offset = 65;
+
+	if (offset) {
+		return String.fromCharCode(((charCodeNumber - offset + 13) % 26) + offset);
 	}
-	return char;
+	return c;
 }
 
 $(document).ready(function () {
 	$('#decrypted').on("input", function () {
-		let text = $('#decrypted').val();
-		let cipher = rot13Cipher(text);
-		$('#encrypted').text(cipher);
+		$('#encrypted').text(this.value.split('').map(function (element) {
+			rot13(element);
+		}).join(''))
 	});
 });
