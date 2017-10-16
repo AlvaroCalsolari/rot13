@@ -3,13 +3,13 @@ function generateRotCipher(string, rotValue) {
 	rotValue = Number(rotValue);
 
 	string = string.map(function (element) {
-		return rot13(element,rotValue);	
+		return rot13(element, rotValue);
 	});
 	string = string.join('');
 	return string;
 }
 
-function rot13(char , rotateValue){
+function rot13(char, rotateValue) {
 	if (char.charCodeAt() >= 65 && char.charCodeAt() <= 90) {
 		return String.fromCharCode((((char.charCodeAt() % 65) + rotateValue) % 26) + 65);
 	} else if (char.charCodeAt() >= 97 && char.charCodeAt() <= 122) {
@@ -27,4 +27,8 @@ $(document).ready(function () {
 		let cipher = generateRotCipher(text, rotValue);
 		$('#encrypted p').text(cipher);
 	});
+
+	$('#switch').on("click", function () {
+		// code goes here
+	})
 });
