@@ -25,17 +25,12 @@ body {
 	grid-template-columns: 36% 18% 36%;
 	grid-template-rows: 10% 90%;
 	grid-column-gap: 5%;
-	grid-template-areas: "textA switch textB" "decrypted rot-value encrypted";
+	grid-template-areas: "textA . textB" "decrypted . encrypted";
 	/* justify-content: space-between; */
 }
 
 .textA {
 	grid-area: textA;
-}
-
-#switch {
-	grid-area: switch;
-	justify-self: center;
 }
 
 .textB {
@@ -61,12 +56,6 @@ body {
 #decrypted {
 	margin-bottom: 1rem;
 	padding: 1rem;
-}
-
-#rot-value {
-	grid-area: rot-value;
-	align-self: center;
-	justify-self: center;
 }
 
 .footer {
