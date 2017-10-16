@@ -27,7 +27,7 @@ ul li a , ul li i {
 	color: #2A5DB0;
 }
 
-textarea {
+textarea , #encrypted {
 	border: 2px solid black;
 	border-radius: 15px;
 	box-shadow: 1px 1px 2px #333333;

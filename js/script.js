@@ -1,40 +1,30 @@
-function rot(string, rotValue) {
-	let array;
-	array = string.split('');
+function generateRotCipher(string, rotValue) {
+	string = string.split('');
 	rotValue = Number(rotValue);
-	array = array.map(function (element) {
-		if (element.charCodeAt() >= 65 && element.charCodeAt() <= 90) {
-			return String.fromCharCode((((element.charCodeAt() % 65) + rotValue) % 26) + 65);
-		} else if (element.charCodeAt() >= 97 && element.charCodeAt() <= 122) {
-			return String.fromCharCode((((element.charCodeAt() % 97) + rotValue) % 26) + 97);
-		}
-		return element;
+
+	string = string.map(function (element) {
+		return rot13(element,rotValue);	
 	});
-	string = array.join('');
+	string = string.join('');
 	return string;
 }
 
-$(document).ready(function () {
-	var reset = function () {
-		$('#decrypted').val('');
-		$('#encrypted').val('');
-	};
+function rot13(char , rotateValue){
+	if (char.charCodeAt() >= 65 && char.charCodeAt() <= 90) {
+		return String.fromCharCode((((char.charCodeAt() % 65) + rotateValue) % 26) + 65);
+	} else if (char.charCodeAt() >= 97 && char.charCodeAt() <= 122) {
+		return String.fromCharCode((((char.charCodeAt() % 97) + rotateValue) % 26) + 97);
+	}
+	return char;
+}
 
-	$('#decrypted').on("focus", reset);
-	$('#encrypted').on("focus", reset);
+$(document).ready(function () {
+
 	$('#decrypted').on("input", function () {
 		// Code goes here
 		let text = $('#decrypted').val();
-		let rotNum = $('#rot-value').val();
-		let rotText = rot(text, rotNum);
-		$('#encrypted').val(rotText);
-	});
-
-	$('#encrypted').on("input", function () {
-		// Code goes here
-		let text = $('#encrypted').val();
-		let rotNum = $('#rot-value').val();
-		let rotText = rot(text, rotNum);
-		$('#decrypted').val(rotText);
+		let rotValue = $('#rot-value').val();
+		let cipher = generateRotCipher(text, rotValue);
+		$('#encrypted p').text(cipher);
 	});
 });
