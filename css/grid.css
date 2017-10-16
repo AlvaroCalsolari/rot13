@@ -25,20 +25,20 @@ body {
 	grid-template-columns: 36% 18% 36%;
 	grid-template-rows: 10% 90%;
 	grid-column-gap: 5%;
-	grid-template-areas: "text-decrypted . text-encrypted" "decrypted rot-value encrypted";
+	grid-template-areas: "textA . textB" "decrypted . encrypted";
 	/* justify-content: space-between; */
 }
 
-.text-decrypted {
-	grid-area: text-decrypted;
+.textA {
+	grid-area: textA;
 }
 
-.text-encrypted {
-	grid-area: text-encrypted;
+.textB {
+	grid-area: textB;
 }
 
-.text-decrypted,
-.text-encrypted {
+.textA,
+.textB {
 	justify-self: center;
 	align-self: end;
 	margin-bottom: 1rem;
@@ -56,12 +56,6 @@ body {
 #decrypted {
 	margin-bottom: 1rem;
 	padding: 1rem;
-}
-
-#rot-value {
-	grid-area: rot-value;
-	align-self: center;
-	justify-self: center;
 }
 
 .footer {
