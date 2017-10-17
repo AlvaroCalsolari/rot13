@@ -65,6 +65,23 @@ body {
 	grid-template-areas: ". name social-media";
 }
 
+@media screen and (max-width: 768px) {
+	.footer {
+		display: flex;
+		flex-direction: column;
+	}
+	.social-media{
+		display: flex;
+		flex-direction: column;
+	}
+	.section{
+		grid-template-columns: 49% 49%;
+		grid-template-rows: 10% 90%;
+		grid-column-gap: 2%;
+		grid-template-areas: "textA textB" "decrypted encrypted";
+	}
+}
+
 .by {
 	grid-area: name;
 	align-self: center;
