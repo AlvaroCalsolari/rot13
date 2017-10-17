@@ -15,7 +15,7 @@ function rot13(c) {
 $(document).ready(function () {
 	$('#decrypted').on("input", function () {
 		$('#encrypted').text(this.value.split('').map(function (element) {
-			rot13(element);
+			return rot13(element);
 		}).join(''))
 	});
 });
